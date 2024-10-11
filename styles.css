@@ -1,0 +1,267 @@
+/* General body and layout */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+/* Root colors */
+:root {
+  --background-color: #f6f8fa;
+  --card-background-color: white;
+
+  /* Text Colors */
+  --primary-text-color: #24292f;
+  --secondary-text-color: #57606a;
+  --icon-color: #0969da;
+
+  /* Badge */
+  --badge-background-color: #e1e4e8;
+  --badge-text-color: #24292f;
+
+  /* Additional Colors */
+  --border-color: #d0d7de;
+  --link-color: #0969da;
+  --hover-background-color: #f3f4f6;
+  --job-duration-color: #24292f;
+  --curent-color: #0969da;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --background-color: #0d1117;
+  --card-background-color: #161b22;
+  --primary-text-color: #c9d1d9;
+  --secondary-text-color: #8b949e;
+  --icon-color: #39d353;
+  --badge-background-color: #161b22;
+  --badge-text-color: #c9d1d9;
+  --border-color: #30363d;
+  --link-color: #39d353;
+  --hover-background-color: #21262d;
+  --job-duration-color: #39d353;
+  --curent-color: #e1e4e8;
+}
+/* Light mode icon styles */
+.light-icon {
+  color: #00897b; /* Color for light mode icons */
+}
+
+.dark-icon {
+  display: none; /* Hide dark icons by default */
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .dark-icon {
+  display: inline; /* Show dark icons in dark mode */
+  color: #39d353; /* Color for dark mode icons */
+}
+
+[data-theme="dark"] .light-icon {
+  display: none; /* Hide light icons in dark mode */
+}
+
+/* ============ */
+.margin-right {
+  margin-right: 10px;
+}
+/* ============ */
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.row {
+  display: flex;
+}
+.profile-section {
+  width: 33.3%;
+}
+.main-content {
+  width: 66.7;
+}
+/* Card */
+.card {
+  background-color: var(--card-background-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: var(--primary-text-color);
+  padding: 16px;
+  margin: 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  width: 30%;
+  padding: 10px;
+}
+
+.profile-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.profile-name {
+  color: var(--primary-text-color);
+  font-weight: bold;
+}
+
+.main-content {
+  width: 70%;
+  padding: 10px;
+}
+
+/* Skills and Progress Bars */
+.skill-list {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress {
+  background-color: var(--icon-color);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 25px;
+}
+.job-duration,
+.education-duration {
+  color: var(--job-duration-color);
+}
+.badge {
+  background-color: var(--curent-color);
+  color: var(--background-color);
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.external-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.external-link:hover {
+  opacity: 0.9;
+  text-decoration: underline;
+}
+/* Footer */
+.footer {
+  background-color: var(--card-background-color);
+  padding: 10px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--icon-color);
+}
+
+/* General Typography */
+h2,
+h3,
+h5 {
+  color: var(--primary-text-color);
+}
+
+p,
+li {
+  color: var(--secondary-text-color);
+}
+
+/* Button for switching themes */
+.btn-theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  background-color: var(--icon-color);
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+.btn-theme-toggle i {
+  font-size: 30px;
+  color: var(--primary-text-color);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    display: block;
+    padding: 10px;
+  }
+  .container .row {
+    flex-wrap: wrap;
+  }
+
+  .profile-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .btn-theme-toggle {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 1.5em;
+  }
+
+  .profile-img {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  .progress {
+    height: 12px;
+    line-height: 12px;
+  }
+
+  .social-links li {
+    margin: 0 5px;
+  }
+}
